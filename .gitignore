@@ -152,3 +152,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
+/photolouge/db.sqlite3
+/.idea/photolouge.iml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/modules.xml

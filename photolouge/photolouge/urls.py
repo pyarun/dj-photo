@@ -16,10 +16,19 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from main.views import hello
+from main.views import hello, redirect_toHello, HelloWorldView, HelloTemplateView, HelloRedrictView, ListUsersView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^hello/([0-9]{4})/([0-9]{4})/(?P<num>[0-9]+)$', hello )
+    url(r'^hello$', hello, name="hello-abc"),
+    url(r'^redirect', redirect_toHello, name="redirect-abc"),
+    url(r'^hello-class', HelloWorldView.as_view(), name="hello-class"),
+    url(r'^hello-template', HelloTemplateView.as_view(), name="hello-template"),
+    url(r'^hello-redirect', HelloRedrictView.as_view()),
+
+    url(r'^users$', ListUsersView.as_view()),
+
+
+
 ]
